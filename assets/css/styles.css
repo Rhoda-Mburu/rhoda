@@ -19,151 +19,29 @@ body {
 /* ------------------------------------------------------
    UNIVERSAL IMAGE LOADING INSTANTLY
 ------------------------------------------------------ */
-
 img {
   display: block;
   width: 100%;
   height: auto;
   object-fit: cover;
-  animation: none; /* zero delay fade-in for all images */
-}
-
-/* ------------------------------------------------------
-HEADER
------------------------------------------------------- */
-
-.site-header {
-  background: #fdf7f2;
-  padding: 20px 0;
-  border-bottom: 2px solid #d8c3a5;
-  position: sticky;
-  top: 0;
-  z-index: 100;
-}
-
-.header-inner {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.brand {
-  font-size: 1.6rem;
-  font-weight: bold;
-  color: #5a3e2b;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.brand:hover {
-  color: #8b5a2b;
-}
-
-.nav a {
-  margin-left: 20px;
-  text-decoration: none;
-  color: #5a3e2b;
-  font-weight: 500;
-  position: relative;
-  transition: color 0.3s ease;
-}
-
-/* Animated underline */
-.nav a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -4px;
-  width: 0%;
-  height: 2px;
-  background: #8b5a2b;
-  transition: width 0.3s ease;
-}
-
-.nav a:hover {
-  color: #8b5a2b;
-}
-
-.nav a:hover::after {
-  width: 100%;
-}
-
-.nav .cta {
-  padding: 8px 16px;
-  border: 2px solid #8b5a2b;
-  border-radius: 5px;
-  color: #8b5a2b;
-  transition: all 0.3s ease;
-}
-
-.nav .cta:hover {
-  background: #8b5a2b;
-  color: #fffaf5;
-}
-
-.nav {
-  display: none; /* hidden by default on mobile */
-  flex-direction: column;
-  background: #fdf7f2;
-  position: absolute;
-  top: 100%;
-  right: 0;
-  width: 100%;
-  padding: 20px 0;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
-}
-
-.nav.active {
-  display: flex; /* shows the menu when toggle is clicked */
+  animation: none !important; /* disables any fade-in or animation */
+  transition: none !important; /* disables any transition effects on load */
 }
 
 /* ------------------------------------------------------
 HERO SECTION — OPTION C
 ------------------------------------------------------ */
-
-.hero {
-  padding: 80px 0;
-}
-
-.hero-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 40px;
-}
-
-.hero-text {
-  flex: 1;
-}
-
-.hero-text h1 {
-  font-size: 2.2rem;
-  color: #4a3428;
-}
-
-.lead {
-  font-size: 1.1rem;
-  margin-top: 10px;
-  line-height: 1.7;
-  color: #5a3e2b;
-}
-
-.hero-photo {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-}
-
 .hero-photo img {
   width: 80%;
   max-width: 360px;
   border-radius: 12px;
   object-fit: cover;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
-  transition: transform 0.4s ease;
+  transition: none; /* disable transform transition for instant display */
+  animation: none; /* disables animation on load */
 }
 
-/* Subtle floating hover */
+/* Retain hover transform separately */
 .hero-photo img:hover {
   transform: translateY(-8px) scale(1.03);
 }
