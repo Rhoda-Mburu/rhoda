@@ -1,6 +1,16 @@
 /* ------------------------------------------------------
-   GLOBAL STYLES — PROFESSIONAL BROWN THEME
+GLOBAL STYLES — PROFESSIONAL BROWN THEME
 ------------------------------------------------------ */
+
+/* UNIVERSAL IMAGE — zero delay, no fade */
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  opacity: 1; /* fully visible immediately */
+  animation: none; /* remove any fade */
+}
 
 body {
   margin: 0;
@@ -34,7 +44,7 @@ section {
 }
 
 /* ------------------------------------------------------
-   HEADER
+HEADER
 ------------------------------------------------------ */
 
 .site-header {
@@ -122,7 +132,7 @@ section {
 }
 
 /* ------------------------------------------------------
-   HERO SECTION — OPTION C
+HERO SECTION — OPTION C
 ------------------------------------------------------ */
 
 .hero {
@@ -164,7 +174,8 @@ section {
   border-radius: 12px;
   object-fit: cover;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
-  transition: transform 0.4s ease;
+  transition: transform 0.4s ease; /* hover only */
+  opacity: 1; /* instant visibility */
 }
 
 /* Subtle floating hover */
@@ -173,7 +184,7 @@ section {
 }
 
 /* ------------------------------------------------------
-   SKILLS PAGE
+SKILLS PAGE
 ------------------------------------------------------ */
 
 .skills {
@@ -239,7 +250,7 @@ section {
 }
 
 /* ------------------------------------------------------
-   QUICK SKILLS
+QUICK SKILLS
 ------------------------------------------------------ */
 
 .quick-skills {
@@ -254,7 +265,7 @@ section {
 }
 
 /* ------------------------------------------------------
-   BUTTONS
+BUTTONS
 ------------------------------------------------------ */
 
 .btn {
@@ -286,7 +297,7 @@ section {
 }
 
 /* ------------------------------------------------------
-   PORTFOLIO GRID
+PORTFOLIO GRID
 ------------------------------------------------------ */
 
 .portfolio-grid {
@@ -315,10 +326,11 @@ section {
   border-radius: 10px;
   object-fit: cover;
   transition: transform 0.4s ease, filter 0.3s ease;
+  opacity: 1; /* instant visibility */
 }
 
 /* ------------------------------------------------------
-   ABOUT SECTION
+ABOUT SECTION
 ------------------------------------------------------ */
 
 .about-top-grid,
@@ -341,6 +353,7 @@ section {
   border-radius: 10px;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
   transition: transform 0.4s ease;
+  opacity: 1; /* instant visibility */
 }
 
 .about-photo img:hover {
@@ -348,7 +361,7 @@ section {
 }
 
 /* ------------------------------------------------------
-   CONTACT PAGE
+CONTACT PAGE
 ------------------------------------------------------ */
 
 .contact-grid {
@@ -384,7 +397,7 @@ section {
 }
 
 /* ------------------------------------------------------
-   FOOTER
+FOOTER
 ------------------------------------------------------ */
 
 .site-footer {
@@ -412,7 +425,7 @@ section {
 }
 
 /* ------------------------------------------------------
-   RESPONSIVE
+RESPONSIVE
 ------------------------------------------------------ */
 
 @media (max-width: 992px) {
@@ -423,6 +436,7 @@ section {
 
   .hero-photo img {
     width: 70%;
+    opacity: 1;
   }
 
   .about-top-grid,
@@ -460,6 +474,7 @@ section {
 @media (max-width: 768px) {
   .hero-photo img {
     width: 70%;
+    opacity: 1;
   }
 }
 
@@ -467,17 +482,6 @@ section {
   .hero-photo img {
     width: 65%;
     max-width: 320px;
+    opacity: 1;
   }
-}
-
-/* ------------------------------------------------------
-   UNIVERSAL IMAGE
------------------------------------------------------- */
-
-img {
-  display: block;
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-  animation: fadeIn 0s ease 0s 1 normal forwards; /* instant fade */
 }
