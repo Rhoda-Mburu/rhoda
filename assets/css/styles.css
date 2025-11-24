@@ -347,6 +347,10 @@ ABOUT SECTION
 .about-photo img:hover {
   transform: translateY(-6px);
 }
+.about-bottom {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
 
 /* ------------------------------------------------------
 CONTACT PAGE
