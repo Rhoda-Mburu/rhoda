@@ -1,6 +1,13 @@
 /* ------------------------------------------------------
    GLOBAL STYLES — PROFESSIONAL BROWN THEME
 ------------------------------------------------------ */
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  animation: fadeIn 0s ease 0s 1 normal forwards; /* instant fade */
+}
 
 body {
   margin: 0;
