@@ -331,28 +331,31 @@ CONTACT PAGE
 FOOTER
 ------------------------------------------------------ */
 
-.site-footer {
-  background: #4a3428;
-  color: #fff;
-  padding: 20px 0;
-  margin-top: 50px;
+/* Footer Socials & Contact */
+.footer-contact {
+  text-align: center;
+  margin-bottom: 10px;
+  color: #5a3e2b;
+  font-size: 1rem;
 }
 
-.footer-inner {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.site-footer a {
-  color: #ffdd9e;
+.footer-contact a {
+  color: #8b5a2b;
   text-decoration: none;
-  margin-left: 15px;
+  margin: 0 8px;
   transition: color 0.3s ease;
 }
 
-.site-footer a:hover {
-  color: #fff0d9;
+.footer-contact a:hover {
+  color: #3a2a20;
+}
+
+.site-footer {
+  background: #fdf7f2;
+  padding: 20px 0;
+  border-top: 2px solid #d8c3a5;
+  font-size: 1rem;
+  color: #5a3e2b;
 }
 
 /* ------------------------------------------------------
