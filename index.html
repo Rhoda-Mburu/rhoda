@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Rhoda Mburu - Creative Content Creator & Marketing Professional
+    </title>
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <meta
+      name="description"
+      content="Rhoda Mburu — Creative content creator and marketing professional. Home page showcasing skills, projects, and services."
+    />
+    <style>
+      /* Inline CSS for home page grid (can move to styles.css) */
+      .portfolio-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+        margin-top: 30px;
+      }
+      .portfolio-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        background-color: #f7f7f7;
+        border-radius: 10px;
+        padding: 15px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      .portfolio-item img {
+        width: 100%;
+        border-radius: 10px;
+        margin-bottom: 10px;
+        transition: transform 0.3s ease;
+      }
+      .portfolio-item img:hover {
+        transform: scale(1.05);
+      }
+      .portfolio-item span {
+        font-weight: 500;
+        color: #111;
+      }
+
+      @media (max-width: 768px) {
+        .hero-grid,
+        .portfolio-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="site-header">
+      <div class="container header-inner">
+        <a href="index.html" class="brand">Rhoda Mburu</a>
+        <nav class="nav" id="nav">
+          <a href="index.html" class="active">Home</a>
+          <a href="about.html">About</a>
+          <a href="skills.html">Skills</a>
+          <a href="portfolio.html">Portfolio</a>
+          <a href="contact.html" class="cta">Contact</a>
+        </nav>
+        <button id="nav-toggle" class="nav-toggle" aria-label="Toggle Menu">
+          ☰
+        </button>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero container">
+      <div class="hero-grid">
+        <div class="hero-text">
+          <h1>
+            Rhoda Mburu - Creative Content Creator & Marketing Professional
+          </h1>
+          <p class="lead">
+            I am a creative content creator and marketer passionate about
+            producing engaging digital content that enhances brand visibility
+            and drives audience growth. I bring brands to life through strategic
+            campaign management, building a strong online presence that connects
+            effectively and creatively.
+          </p>
+
+          <!-- Quick Skills -->
+          <ul class="quick-skills">
+            <li>Campaign Planning & Execution</li>
+            <li>Creator Collaboration</li>
+            <li>Brand Identity & Aesthetic</li>
+            <li>Graphic Design</li>
+            <li>Social Media Strategy</li>
+          </ul>
+
+          <div class="hero-ctas">
+            <a href="about.html" class="btn">About Me</a>
+            <a href="portfolio.html" class="btn ghost">View Portfolio</a>
+          </div>
+        </div>
+
+        
+    </section>
+
+    <!-- Featured Projects on Home Page -->
+    <section class="portfolio container">
+      <h2>My Work</h2>
+      <p>
+        Some of my projects and collaborations showcasing my skills in content
+        creation and marketing strategy:
+      </p>
+
+      <div class="portfolio-grid">
+        <div class="portfolio-item">
+          <img src="assets/images/photo1.jpg" alt="Project 1" />
+          <span>Brand Campaign — Visual Direction</span>
+        </div>
+        <div class="portfolio-item">
+          <img src="assets/images/photo2.jpg" alt="Project 2" />
+          <span>Product Launch — Content Series</span>
+        </div>
+        <div class="portfolio-item">
+          <img src="assets/images/photo3.jpg" alt="Project 3" />
+          <span>Creator Collaboration — Influencer Content</span>
+        </div>
+        <div class="portfolio-item">
+          <img src="assets/images/photo4.jpg" alt="Project 4" />
+          <span>Social Media Campaign — Audience Growth</span>
+        </div>
+        <div class="portfolio-item">
+          <img src="assets/images/photo5.jpg" alt="Project 5" />
+          <span>Brand Identity Development — Visual Assets</span>
+        </div>
+        <div class="portfolio-item">
+          <img src="assets/images/photo6.jpg" alt="Project 6" />
+          <span>Graphic Design — Digital Content</span>
+        </div>
+        <div class="portfolio-item">
+          <img src="assets/images/photo7.jpg" alt="Project 7" />
+          <span>Campaign Analysis — Metrics & Strategy</span>
+        </div>
+        <div class="portfolio-item">
+          <img src="assets/images/photo8.jpg" alt="Project 8" />
+          <span>Creator Collaboration — Influencer Series</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <div>© <span id="year"></span> Rhoda Nduta Mburu</div>
+        <div class="socials">
+          <a href="#" aria-label="Instagram">Instagram</a>
+          <a href="#" aria-label="TikTok">TikTok</a>
+          <a href="#" aria-label="YouTube">YouTube</a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- JS -->
+    <script src="assets/js/main.js"></script>
+    <script>
+      // Footer year auto-update
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>

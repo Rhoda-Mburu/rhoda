@@ -1,0 +1,262 @@
+/* --- General Reset & Base Styles --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
+  background-color: #fff;
+  color: #111;
+}
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+h1, h2, h3 {
+  color: #222;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* --- Header --- */
+.site-header {
+  background-color: #000;
+  color: #fff;
+  padding: 15px 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.brand {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #FFD700;
+}
+.nav a {
+  margin-left: 20px;
+  font-weight: 500;
+  color: #fff;
+  transition: color 0.3s ease;
+}
+.nav a:hover, .nav a.active {
+  color: #FFD700;
+}
+.nav-toggle {
+  display: none;
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* --- Hero Section --- */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 0;
+  background-color: #f7f7f7;
+}
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+.hero h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+.lead {
+  margin-bottom: 20px;
+}
+.hero-ctas .btn {
+  padding: 10px 25px;
+  margin-right: 15px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  border-radius: 5px;
+  background-color: #FFD700;
+  color: #000;
+  transition: background 0.3s ease;
+}
+.hero-ctas .btn:hover, .btn:hover {
+  background-color: #e6c200;
+}
+.hero-ctas .ghost {
+  background: none;
+  border: 2px solid #FFD700;
+  color: #000;
+}
+
+/* --- Quick Skills --- */
+.quick-skills {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+.quick-skills li {
+  background-color: #000;
+  color: #FFD700;
+  padding: 5px 10px;
+  margin: 5px;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+/* --- Sections --- */
+section {
+  padding: 60px 0;
+}
+.skills-grid, .portfolio-grid, .about-grid {
+  display: grid;
+  gap: 30px;
+}
+
+/* --- About Section --- */
+.about-grid {
+  grid-template-columns: 1fr 1fr;
+  align-items: start;
+}
+.about-photo img {
+  width: 100%;
+  border-radius: 10px;
+}
+.personal-details {
+  list-style: none;
+  margin-top: 20px;
+}
+.personal-details li {
+  margin-bottom: 10px;
+}
+
+/* --- Skills Section --- */
+.skills-grid {
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+.skill-card {
+  background-color: #f7f7f7;
+  padding: 25px;
+  border-radius: 10px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.skill-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+}
+.skill-icon {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+/* --- Portfolio Section --- */
+.portfolio-grid {
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+.portfolio-item {
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+}
+.portfolio-item img {
+  width: 100%;
+  border-radius: 10px;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+.portfolio-item img:hover {
+  transform: scale(1.05);
+  filter: brightness(0.9);
+}
+/* Lightbox */
+.lightbox {
+  display: none;
+  position: fixed;
+  z-index: 200;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.9);
+  justify-content: center;
+  align-items: center;
+}
+.lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 10px;
+}
+
+/* --- Contact Section --- */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+.contact-form input, .contact-form textarea {
+  width: 100%;
+  padding: 10px 15px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+.contact-form button {
+  background-color: #FFD700;
+  color: #000;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 600;
+}
+.contact-form button:hover {
+  background-color: #e6c200;
+}
+
+/* --- Footer --- */
+.site-footer {
+  background-color: #000;
+  color: #fff;
+  padding: 20px 0;
+  margin-top: 40px;
+}
+.site-footer a {
+  color: #FFD700;
+  margin-left: 15px;
+}
+
+/* --- Responsive --- */
+@media(max-width: 992px){
+  .hero-grid, .about-grid, .contact-grid {
+    grid-template-columns: 1fr;
+  }
+  .nav {
+    display: none;
+    flex-direction: column;
+    background-color: #000;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 200px;
+    padding: 20px;
+  }
+  .nav a {
+    margin: 10px 0;
+  }
+  .nav-toggle {
+    display: block;
+  }
+}
