@@ -13,22 +13,200 @@
       name="description"
       content="Portfolio of Rhoda Mburu — showcasing creative content, campaigns, and marketing projects."
     />
+    <style>
+      /* -------------------- HEADER -------------------- */
+      .site-header {
+        background: #fdf7f2;
+        padding: 20px 0;
+        border-bottom: 2px solid #d8c3a5;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+      }
+
+      .header-inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .brand {
+        font-size: 1.6rem;
+        font-weight: bold;
+        color: #5a3e2b;
+        text-decoration: none;
+      }
+
+      .nav a {
+        margin-left: 20px;
+        text-decoration: none;
+        color: #5a3e2b;
+        font-weight: 500;
+      }
+
+      .nav a.active {
+        color: #8b5a2b;
+      }
+
+      .nav .cta {
+        border: 2px solid #8b5a2b;
+        border-radius: 5px;
+        padding: 6px 12px;
+      }
+
+      .nav .cta:hover {
+        background: #8b5a2b;
+        color: #fffaf5;
+      }
+
+      .nav-check {
+        display: none;
+      }
+
+      .nav-toggle {
+        display: none;
+        font-size: 1.8rem;
+        cursor: pointer;
+        color: #5a3e2b;
+      }
+
+      .nav {
+        display: flex;
+        gap: 15px;
+      }
+
+      @media (max-width: 992px) {
+        .nav {
+          display: none;
+          flex-direction: column;
+          background: #fdf7f2;
+          position: absolute;
+          top: 100%;
+          right: 0;
+          width: 100%;
+          padding: 20px 0;
+          box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+        }
+
+        .nav-toggle {
+          display: block;
+        }
+
+        .nav-check:checked ~ .nav {
+          display: flex;
+        }
+
+        .nav a {
+          margin: 10px 0;
+        }
+      }
+
+      /* -------------------- PORTFOLIO -------------------- */
+      .portfolio {
+        padding: 40px 20px;
+        max-width: 1200px;
+        margin: auto;
+      }
+
+      .portfolio h1 {
+        font-size: 2rem;
+        margin-bottom: 15px;
+        color: #3a2a20;
+      }
+
+      .portfolio p {
+        font-size: 1.1rem;
+        margin-bottom: 30px;
+        color: #5a3e2b;
+      }
+
+      .portfolio-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+      }
+
+      .portfolio-item img {
+        width: 100%;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .portfolio-item img:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      }
+
+      /* -------------------- LIGHTBOX -------------------- */
+      #lightbox {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.8);
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+      }
+
+      #lightbox img {
+        max-width: 90%;
+        max-height: 90%;
+        border-radius: 10px;
+      }
+
+      #lightbox span {
+        position: absolute;
+        top: 20px;
+        right: 40px;
+        font-size: 2rem;
+        color: #fff;
+        cursor: pointer;
+      }
+
+      /* -------------------- FOOTER -------------------- */
+      .site-footer {
+        background: #fdf7f2;
+        border-top: 2px solid #d8c3a5;
+        padding: 20px 0;
+        text-align: center;
+        color: #5a3e2b;
+        margin-top: 60px;
+      }
+
+      .footer-contact a {
+        color: #8b5a2b;
+        text-decoration: none;
+        font-weight: 500;
+      }
+
+      .footer-contact a:hover {
+        text-decoration: underline;
+      }
+    </style>
   </head>
   <body>
     <!-- Header -->
     <header class="site-header">
       <div class="container header-inner">
         <a href="index.html" class="brand">Rhoda Mburu</a>
-        <nav class="nav" id="nav">
+
+        <!-- CSS-only Mobile Toggle -->
+        <input type="checkbox" id="nav-check" class="nav-check" />
+        <label for="nav-check" class="nav-toggle" aria-label="Toggle Menu"
+          >☰</label
+        >
+
+        <nav class="nav">
           <a href="index.html">Home</a>
           <a href="about.html">About</a>
           <a href="skills.html">Skills</a>
           <a href="portfolio.html" class="active">Portfolio</a>
           <a href="contact.html" class="cta">Contact</a>
         </nav>
-        <button id="nav-toggle" class="nav-toggle" aria-label="Toggle Menu">
-          ☰
-        </button>
       </div>
     </header>
 
@@ -86,24 +264,39 @@
       </div>
     </section>
 
+    <!-- Lightbox -->
+    <div id="lightbox" onclick="closeLightbox()">
+      <span onclick="closeLightbox()">&times;</span>
+      <img id="lightbox-img" src="" alt="Lightbox Image" />
+    </div>
+
     <!-- Footer -->
     <footer class="site-footer">
-      <div class="container footer-inner">
-        <div class="container footer-inner">
-    <div class="footer-contact">
-      <p>Call: <a href="tel:+254707070457">+254707070457</a></p>
-      <p>Follow me on:</p>
-      <a href="https://www.instagram.com/rhoda_shantel?igsh=MXczdXQ0aDlqeXZscQ==" target="_blank" rel="noopener noreferrer">Instagram</a> |
-      <a href="https://youtube.com/@rhodashantel23?si=8rRdQMCtexGB6cBs" target="_blank" rel="noopener noreferrer">YouTube</a>
-    </div>
-        <div>© <span id="year"></span> Rhoda Nduta Mburu</div>
+      <div class="footer-contact">
+        <p>Call: <a href="tel:+254707070457">+254707070457</a></p>
+        <p>Follow me on:</p>
+        <a
+          href="https://www.instagram.com/rhoda_shantel?igsh=MXczdXQ0aDlqeXZscQ=="
+          target="_blank"
+          rel="noopener noreferrer"
+          >Instagram</a
+        >
+        |
+        <a
+          href="https://youtube.com/@rhodashantel23?si=8rRdQMCtexGB6cBs"
+          target="_blank"
+          rel="noopener noreferrer"
+          >YouTube</a
+        >
       </div>
+      <div>© <span id="year"></span> Rhoda Nduta Mburu</div>
     </footer>
 
-    <!-- JS -->
-    <script src="assets/js/main.js"></script>
     <script>
-      // Lightbox JS
+      // Auto update footer year
+      document.getElementById("year").textContent = new Date().getFullYear();
+
+      // Lightbox functions
       function openLightbox(img) {
         document.getElementById("lightbox-img").src = img.src;
         document.getElementById("lightbox").style.display = "flex";

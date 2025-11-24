@@ -13,26 +13,210 @@
       name="description"
       content="Learn more about Rhoda Mburu — Creative content creator and marketing professional. Personal details, skills, and background."
     />
+    <style>
+      /* -------------------- HEADER -------------------- */
+      .site-header {
+        background: #fdf7f2;
+        padding: 20px 0;
+        border-bottom: 2px solid #d8c3a5;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+      }
+
+      .header-inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .brand {
+        font-size: 1.6rem;
+        font-weight: bold;
+        color: #5a3e2b;
+        text-decoration: none;
+      }
+
+      .nav a {
+        margin-left: 20px;
+        text-decoration: none;
+        color: #5a3e2b;
+        font-weight: 500;
+      }
+
+      .nav .cta {
+        border: 2px solid #8b5a2b;
+        border-radius: 5px;
+        padding: 6px 12px;
+      }
+
+      .nav .cta:hover {
+        background: #8b5a2b;
+        color: #fffaf5;
+      }
+
+      /* Mobile nav checkbox */
+      .nav-check {
+        display: none;
+      }
+
+      .nav-toggle {
+        display: none;
+        font-size: 1.8rem;
+        cursor: pointer;
+        color: #5a3e2b;
+      }
+
+      .nav {
+        display: flex;
+        gap: 15px;
+      }
+
+      /* Responsive */
+      @media (max-width: 992px) {
+        .nav {
+          display: none;
+          flex-direction: column;
+          background: #fdf7f2;
+          position: absolute;
+          top: 100%;
+          right: 0;
+          width: 100%;
+          padding: 20px 0;
+          box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+        }
+
+        .nav-toggle {
+          display: block;
+        }
+
+        .nav-check:checked ~ .nav {
+          display: flex;
+        }
+
+        .nav a {
+          margin: 10px 0;
+        }
+      }
+
+      /* -------------------- ABOUT TOP SECTION -------------------- */
+      .about-top {
+        padding: 40px 20px;
+      }
+
+      .about-bottom-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+        align-items: start;
+      }
+
+      .about-photo img {
+        width: 100%;
+        border-radius: 12px;
+        object-fit: cover;
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
+      }
+
+      .about-text h1 {
+        font-size: 2rem;
+        margin-bottom: 20px;
+        color: #3a2a20;
+      }
+
+      .about-text p {
+        font-size: 1.1rem;
+        line-height: 1.6;
+        margin-bottom: 15px;
+        color: #5a3e2b;
+      }
+
+      /* -------------------- ABOUT BOTTOM SECTION -------------------- */
+      .about-bottom-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 40px;
+        padding: 40px 20px;
+        align-items: start;
+      }
+
+      ul.personal-details,
+      ul.core-skills {
+        list-style: none;
+        padding: 0;
+      }
+
+      ul.personal-details h2,
+      ul.core-skills h2 {
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+        color: #3a2a20;
+      }
+
+      ul.personal-details li,
+      ul.core-skills li {
+        margin-bottom: 10px;
+        color: #5a3e2b;
+        line-height: 1.5;
+      }
+
+      /* -------------------- FOOTER -------------------- */
+      .site-footer {
+        background: #fdf7f2;
+        border-top: 2px solid #d8c3a5;
+        padding: 20px 0;
+        text-align: center;
+        color: #5a3e2b;
+        margin-top: 60px;
+      }
+
+      .footer-contact a {
+        color: #8b5a2b;
+        text-decoration: none;
+        font-weight: 500;
+      }
+
+      .footer-contact a:hover {
+        text-decoration: underline;
+      }
+
+      /* Responsive adjustments */
+      @media (max-width: 992px) {
+        .about-bottom-grid {
+          grid-template-columns: 1fr;
+          gap: 30px;
+        }
+
+        .about-bottom-grid .about-photo {
+          max-width: 100%;
+        }
+      }
+    </style>
   </head>
+
   <body>
     <!-- Header -->
     <header class="site-header">
       <div class="container header-inner">
         <a href="index.html" class="brand">Rhoda Mburu</a>
-        <nav class="nav" id="nav">
+
+        <!-- CSS-only Mobile Toggle -->
+        <input type="checkbox" id="nav-check" class="nav-check" />
+        <label for="nav-check" class="nav-toggle" aria-label="Toggle Menu"
+          >☰</label
+        >
+
+        <nav class="nav">
           <a href="index.html">Home</a>
           <a href="about.html" class="active">About</a>
           <a href="skills.html">Skills</a>
           <a href="portfolio.html">Portfolio</a>
           <a href="contact.html" class="cta">Contact</a>
         </nav>
-        <button id="nav-toggle" class="nav-toggle" aria-label="Toggle Menu">
-          ☰
-        </button>
       </div>
     </header>
 
-    <!-- Top Section: Photo1 and About Text -->
+    <!-- Top Section: Photo + About Text -->
     <section class="about-top">
       <div class="container about-bottom-grid">
         <!-- Left Photo -->
@@ -44,22 +228,20 @@
         <div class="about-text">
           <h1>About Me</h1>
           <p>
-            I am Rhoda Mburu, a creative content creator and marketing<br />
-            professional passionate about producing engaging digital content<br />
-            that enhances brand visibility and drives audience growth. I<br />
-            specialize in strategic campaign management and building strong<br />
-            online presence that resonates with the audience.<br />
+            I am Rhoda Mburu, a creative content creator and marketing
+            professional passionate about producing engaging digital content
+            that enhances brand visibility and drives audience growth.
           </p>
           <p>
-            My approach combines creativity, analytics, and storytelling to<br />
-            ensure every project delivers impact, aligns with brand goals,
-            and<br />
-            engages audiences effectively.<br />
+            My approach combines creativity, analytics, and storytelling to
+            ensure every project delivers impact, aligns with brand goals, and
+            engages audiences effectively.
           </p>
         </div>
       </div>
     </section>
 
+    <!-- Bottom Section: Personal Details + Photo + Core Skills -->
     <section class="about-bottom">
       <div class="container about-bottom-grid">
         <!-- Left List: Personal Details -->
@@ -101,19 +283,29 @@
 
     <!-- Footer -->
     <footer class="site-footer">
-      <div class="container footer-inner">
-        <div class="container footer-inner">
-    <div class="footer-contact">
-      <p>Call: <a href="tel:+254707070457">+254707070457</a></p>
-      <p>Follow me on:</p>
-      <a href="https://www.instagram.com/rhoda_shantel?igsh=MXczdXQ0aDlqeXZscQ==" target="_blank" rel="noopener noreferrer">Instagram</a> |
-      <a href="https://youtube.com/@rhodashantel23?si=8rRdQMCtexGB6cBs" target="_blank" rel="noopener noreferrer">YouTube</a>
-    </div>
-        <div>© <span id="year"></span> Rhoda Nduta Mburu</div>
+      <div class="footer-contact">
+        <p>Call: <a href="tel:+254707070457">+254707070457</a></p>
+        <p>Follow me on:</p>
+        <a
+          href="https://www.instagram.com/rhoda_shantel?igsh=MXczdXQ0aDlqeXZscQ=="
+          target="_blank"
+          rel="noopener noreferrer"
+          >Instagram</a
+        >
+        |
+        <a
+          href="https://youtube.com/@rhodashantel23?si=8rRdQMCtexGB6cBs"
+          target="_blank"
+          rel="noopener noreferrer"
+          >YouTube</a
+        >
       </div>
+      <div>© <span id="year"></span> Rhoda Nduta Mburu</div>
     </footer>
 
-    <!-- JS -->
-    <script src="assets/js/main.js"></script>
+    <script>
+      // Auto update footer year
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
   </body>
 </html>

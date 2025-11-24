@@ -11,20 +11,267 @@
       name="description"
       content="Rhoda Mburu — Creative content creator and marketing professional. Home page showcasing skills, projects, and services."
     />
+    <style>
+      /* -------------------- HEADER -------------------- */
+      .site-header {
+        background: #fdf7f2;
+        padding: 20px 0;
+        border-bottom: 2px solid #d8c3a5;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+      }
+
+      .header-inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .brand {
+        font-size: 1.6rem;
+        font-weight: bold;
+        color: #5a3e2b;
+        text-decoration: none;
+      }
+
+      .nav a {
+        margin-left: 20px;
+        text-decoration: none;
+        color: #5a3e2b;
+        font-weight: 500;
+      }
+
+      .nav a.active {
+        color: #8b5a2b;
+      }
+
+      .nav .cta {
+        border: 2px solid #8b5a2b;
+        border-radius: 5px;
+        padding: 6px 12px;
+      }
+
+      .nav .cta:hover {
+        background: #8b5a2b;
+        color: #fffaf5;
+      }
+
+      .nav-check {
+        display: none;
+      }
+
+      .nav-toggle {
+        display: none;
+        font-size: 1.8rem;
+        cursor: pointer;
+        color: #5a3e2b;
+      }
+
+      .nav {
+        display: flex;
+        gap: 15px;
+      }
+
+      @media (max-width: 992px) {
+        .nav {
+          display: none;
+          flex-direction: column;
+          background: #fdf7f2;
+          position: absolute;
+          top: 100%;
+          right: 0;
+          width: 100%;
+          padding: 20px 0;
+          box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+        }
+
+        .nav-toggle {
+          display: block;
+        }
+
+        .nav-check:checked ~ .nav {
+          display: flex;
+        }
+
+        .nav a {
+          margin: 10px 0;
+        }
+      }
+
+      /* -------------------- HERO -------------------- */
+      .hero {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 60px 20px;
+      }
+
+      .hero h1 {
+        font-size: 2rem;
+        color: #3a2a20;
+        margin-bottom: 15px;
+      }
+
+      .hero .lead {
+        font-size: 1.1rem;
+        margin-bottom: 20px;
+        color: #5a3e2b;
+        max-width: 700px;
+      }
+
+      .quick-skills {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center;
+        margin-bottom: 25px;
+        list-style: none;
+        padding: 0;
+      }
+
+      .quick-skills li {
+        background: #f3e8dc;
+        padding: 6px 12px;
+        border-radius: 20px;
+        font-weight: 500;
+        color: #5a3e2b;
+        font-size: 0.95rem;
+      }
+
+      .hero-ctas .btn {
+        margin: 0 10px;
+        padding: 10px 20px;
+        border-radius: 5px;
+        text-decoration: none;
+        font-weight: 500;
+        border: 2px solid #8b5a2b;
+        background: #fff;
+        color: #8b5a2b;
+        transition: all 0.3s ease;
+      }
+
+      .hero-ctas .btn:hover {
+        background: #8b5a2b;
+        color: #fffaf5;
+      }
+
+      .hero-ctas .ghost {
+        background: transparent;
+      }
+
+      .hero-photo img {
+        max-width: 300px;
+        border-radius: 15px;
+        margin-top: 30px;
+      }
+
+      @media (min-width: 992px) {
+        .hero {
+          flex-direction: row;
+          text-align: left;
+          justify-content: space-between;
+        }
+
+        .hero-photo img {
+          margin-top: 0;
+        }
+      }
+
+      /* -------------------- PORTFOLIO GRID -------------------- */
+      .portfolio {
+        padding: 40px 20px;
+        max-width: 1200px;
+        margin: auto;
+      }
+
+      .portfolio h2 {
+        font-size: 1.8rem;
+        color: #3a2a20;
+        margin-bottom: 15px;
+      }
+
+      .portfolio p {
+        font-size: 1.1rem;
+        color: #5a3e2b;
+        margin-bottom: 30px;
+      }
+
+      .portfolio-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+      }
+
+      .portfolio-item {
+        position: relative;
+        border-radius: 10px;
+        overflow: hidden;
+      }
+
+      .portfolio-item img {
+        width: 100%;
+        display: block;
+        transition: transform 0.3s ease;
+        border-radius: 10px;
+      }
+
+      .portfolio-item span {
+        position: absolute;
+        bottom: 10px;
+        left: 10px;
+        background: rgba(255, 255, 255, 0.85);
+        padding: 5px 10px;
+        border-radius: 5px;
+        font-size: 0.9rem;
+        color: #5a3e2b;
+      }
+
+      .portfolio-item:hover img {
+        transform: scale(1.05);
+      }
+
+      /* -------------------- FOOTER -------------------- */
+      .site-footer {
+        background: #fdf7f2;
+        border-top: 2px solid #d8c3a5;
+        padding: 20px 0;
+        text-align: center;
+        color: #5a3e2b;
+        margin-top: 60px;
+      }
+
+      .footer-contact a {
+        color: #8b5a2b;
+        text-decoration: none;
+        font-weight: 500;
+      }
+
+      .footer-contact a:hover {
+        text-decoration: underline;
+      }
+    </style>
   </head>
   <body>
     <!-- Header -->
     <header class="site-header">
       <div class="container header-inner">
         <a href="index.html" class="brand">Rhoda Mburu</a>
-        <nav class="nav" id="nav">
+
+        <!-- CSS-only Mobile Toggle -->
+        <input type="checkbox" id="nav-check" class="nav-check" />
+        <label for="nav-check" class="nav-toggle" aria-label="Toggle Menu"
+          >☰</label
+        >
+
+        <nav class="nav">
           <a href="index.html" class="active">Home</a>
           <a href="about.html">About</a>
           <a href="skills.html">Skills</a>
           <a href="portfolio.html">Portfolio</a>
           <a href="contact.html" class="cta">Contact</a>
         </nav>
-        <button id="nav-toggle" class="nav-toggle">☰</button>
       </div>
     </header>
 
@@ -73,55 +320,70 @@
 
       <div class="portfolio-grid">
         <div class="portfolio-item">
-          <img src="assets/images/photo1.jpg" alt="Project 1" />
-          <span>Brand Campaign — Visual Direction</span>
+          <img src="assets/images/photo1.jpg" alt="Project 1" /><span
+            >Brand Campaign — Visual Direction</span
+          >
         </div>
         <div class="portfolio-item">
-          <img src="assets/images/photo2.jpg" alt="Project 2" />
-          <span>Product Launch — Content Series</span>
+          <img src="assets/images/photo2.jpg" alt="Project 2" /><span
+            >Product Launch — Content Series</span
+          >
         </div>
         <div class="portfolio-item">
-          <img src="assets/images/photo3.jpg" alt="Project 3" />
-          <span>Creator Collaboration — Influencer Content</span>
+          <img src="assets/images/photo3.jpg" alt="Project 3" /><span
+            >Creator Collaboration — Influencer Content</span
+          >
         </div>
         <div class="portfolio-item">
-          <img src="assets/images/photo4.jpg" alt="Project 4" />
-          <span>Social Media Campaign — Audience Growth</span>
+          <img src="assets/images/photo4.jpg" alt="Project 4" /><span
+            >Social Media Campaign — Audience Growth</span
+          >
         </div>
         <div class="portfolio-item">
-          <img src="assets/images/photo5.jpg" alt="Project 5" />
-          <span>Brand Identity Development — Visual Assets</span>
+          <img src="assets/images/photo5.jpg" alt="Project 5" /><span
+            >Brand Identity Development — Visual Assets</span
+          >
         </div>
         <div class="portfolio-item">
-          <img src="assets/images/photo6.jpg" alt="Project 6" />
-          <span>Graphic Design — Digital Content</span>
+          <img src="assets/images/photo6.jpg" alt="Project 6" /><span
+            >Graphic Design — Digital Content</span
+          >
         </div>
         <div class="portfolio-item">
-          <img src="assets/images/photo7.jpg" alt="Project 7" />
-          <span>Campaign Analysis — Metrics & Strategy</span>
+          <img src="assets/images/photo7.jpg" alt="Project 7" /><span
+            >Campaign Analysis — Metrics & Strategy</span
+          >
         </div>
         <div class="portfolio-item">
-          <img src="assets/images/photo8.jpg" alt="Project 8" />
-          <span>Creator Collaboration — Influencer Series</span>
+          <img src="assets/images/photo8.jpg" alt="Project 8" /><span
+            >Creator Collaboration — Influencer Series</span
+          >
         </div>
       </div>
     </section>
 
     <!-- Footer -->
     <footer class="site-footer">
-      <div class="container footer-inner">
-        <div class="container footer-inner">
-    <div class="footer-contact">
-      <p>Call: <a href="tel:+254707070457">+254707070457</a></p>
-      <p>Follow me on:</p>
-      <a href="https://www.instagram.com/rhoda_shantel?igsh=MXczdXQ0aDlqeXZscQ==" target="_blank" rel="noopener noreferrer">Instagram</a> |
-      <a href="https://youtube.com/@rhodashantel23?si=8rRdQMCtexGB6cBs" target="_blank" rel="noopener noreferrer">YouTube</a>
-    </div>
-        <div>© <span id="year"></span> Rhoda Nduta Mburu</div>
+      <div class="footer-contact">
+        <p>Call: <a href="tel:+254707070457">+254707070457</a></p>
+        <p>Follow me on:</p>
+        <a
+          href="https://www.instagram.com/rhoda_shantel?igsh=MXczdXQ0aDlqeXZscQ=="
+          target="_blank"
+          rel="noopener noreferrer"
+          >Instagram</a
+        >
+        |
+        <a
+          href="https://youtube.com/@rhodashantel23?si=8rRdQMCtexGB6cBs"
+          target="_blank"
+          rel="noopener noreferrer"
+          >YouTube</a
+        >
       </div>
+      <div>© <span id="year"></span> Rhoda Nduta Mburu</div>
     </footer>
 
-    <script src="assets/js/main.js"></script>
     <script>
       document.getElementById("year").textContent = new Date().getFullYear();
     </script>
