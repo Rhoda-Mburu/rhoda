@@ -16,21 +16,16 @@ body {
   margin: 0 auto;
 }
 
-/* Smooth fade-in for all main sections */
-section {
-  padding: 60px 0;
-  animation: fadeIn 0.9s ease;
-}
+/* ------------------------------------------------------
+   UNIVERSAL IMAGE LOADING INSTANTLY
+------------------------------------------------------ */
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(15px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  animation: none; /* zero delay fade-in for all images */
 }
 
 /* ------------------------------------------------------
@@ -319,37 +314,101 @@ PORTFOLIO GRID
 }
 
 /* ------------------------------------------------------
-ABOUT SECTION
+   ABOUT SECTION
 ------------------------------------------------------ */
 
+/* Grid layouts */
 .about-top-grid,
 .about-bottom-grid {
   display: grid;
-  gap: 30px;
+  gap: 10px; /* minimized gap to remove extra space */
 }
 
+/* Top section: photo left, text right */
 .about-top-grid {
   grid-template-columns: 1fr 2fr;
+  align-items: stretch; /* photo fills height relative to text */
 }
 
+/* Bottom section: left list | photo | right list */
 .about-bottom-grid {
-  grid-template-columns: 1fr 1fr;
-  margin-top: 50px;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 30px;
+  align-items: stretch; /* photo fills height relative to tallest list */
 }
 
-.about-photo img {
-  width: 100%;
+/* Images */
+/* Bottom photo4 adjustments */
+.about-bottom-grid .about-photo img {
+  max-height: 400px; /* adjust as needed */
+  width: auto; /* maintain aspect ratio */
+  height: auto; /* natural height if smaller than max */
+  object-fit: cover; /* crop if necessary without stretching */
+  display: block;
+  margin: 0 auto; /* center in column */
   border-radius: 10px;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
   transition: transform 0.4s ease;
 }
 
-.about-photo img:hover {
-  transform: translateY(-6px);
+.about-bottom-grid .about-photo img:hover {
+  transform: translateY(-4px); /* subtle hover for bottom photo */
 }
+
+/* Overall padding for bottom section */
 .about-bottom {
-  padding-top: 30px;
-  padding-bottom: 30px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+/* Text styling */
+.about-text p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+/* Lists */
+.personal-details,
+.core-skills {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.personal-details li,
+.core-skills li {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 8px;
+  color: #5a3e2b;
+}
+
+/* Headings */
+.about-text h1,
+.about-bottom h2 {
+  font-size: 1.8rem;
+  margin-bottom: 12px;
+  color: #3a2a20;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .about-top-grid,
+  .about-bottom-grid {
+    grid-template-columns: 1fr; /* stack for mobile */
+  }
+
+  .about-photo img {
+    width: 80%;
+    height: auto;
+    margin: 50px auto;
+  }
+
+  .about-text p,
+  .core-skills-wrapper li,
+  .personal-details li {
+    font-size: 1.1rem;
+  }
 }
 
 /* ------------------------------------------------------
